@@ -21,5 +21,6 @@ namespace RedisList
         public static ConnectionMultiplexer Connection => LazyConnection.Value;
 
         public static IDatabase RedisCache => Connection.GetDatabase();
+
     }
 }

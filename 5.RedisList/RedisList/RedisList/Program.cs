@@ -1,11 +1,44 @@
 ﻿using StackExchange.Redis;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace RedisList
 {
     class Program
     {
+        public static void HashTest()
+        {
+            // Creating HashSet 
+            // Using HashSet class 
+            HashSet<string> myhash = new HashSet<string>();
+            // Add the elements in HashSet 
+            // Using Add method 
+            myhash.Add("C");
+            myhash.Add("C++");
+            myhash.Add("C#");
+            myhash.Add("Java");
+            myhash.Add("Ruby");
+
+            // After using Remove method 
+            Console.WriteLine("Total number of elements present" +
+                              " in myhash: {0}", myhash.Count);
+
+            // Remove element from HashSet 
+            // Using Remove method 
+            myhash.Remove("Ruby");
+
+            // Before using Remove method 
+
+            Console.WriteLine("Total number of elements present" +
+                              " in myhash: {0}", myhash.Count);
+
+            // Remove all elements from HashSet 
+            // Using Clear method 
+            myhash.Clear();
+            Console.WriteLine("Total number of elements present" +
+                              " in myhash:{0}", myhash.Count);
+        }
         static void Main(string[] args)
         {
             var redis = RedisStore.RedisCache;
@@ -22,6 +55,7 @@ namespace RedisList
             redis.ListRightPush(listKey, "b");
 
             Console.WriteLine(redis.ListLength(listKey)); //putput is 2
+
 
             //lets clear it out
             redis.KeyDelete(listKey, CommandFlags.FireAndForget);

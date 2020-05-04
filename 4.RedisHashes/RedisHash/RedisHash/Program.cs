@@ -64,6 +64,11 @@ namespace RedisHash
                 var year2 = redis.HashDecrement(hashKey, "year", 1.5); //year now becomes 2015.5
 
                 Console.WriteLine(year2);
+
+                redis.HashSet(hashKey, "year", 20);
+                var redisValue = redis.HashGet(hashKey,"year");
+                Console.WriteLine(redisValue);
+
             }
 
             Console.ReadKey();
