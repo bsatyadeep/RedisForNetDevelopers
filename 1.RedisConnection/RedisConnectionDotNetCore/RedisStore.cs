@@ -19,7 +19,8 @@ namespace RedisConnectionDotNetCore
 
             var configurationOptions = new ConfigurationOptions
             {
-                EndPoints = { config["redis.connection"] }
+                EndPoints = { config["redis.connection"] },
+                AllowAdmin = true
             };
 
             LazyConnection = new Lazy<ConnectionMultiplexer>(() => ConnectionMultiplexer.Connect(configurationOptions));

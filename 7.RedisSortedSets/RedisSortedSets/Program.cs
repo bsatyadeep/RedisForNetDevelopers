@@ -15,12 +15,11 @@ namespace RedisSortedSets
             RedisKey intersectKey = "intersectKey";
 
 
-            redis.KeyDelete(topHackerKeys, CommandFlags.FireAndForget);
-            redis.KeyDelete(alphaKey, CommandFlags.FireAndForget);
-            redis.KeyDelete(intersectKey, CommandFlags.FireAndForget);
-            redis.KeyDelete(destinationKey, CommandFlags.FireAndForget);
+            //redis.KeyDelete(topHackerKeys, CommandFlags.FireAndForget);
+            //redis.KeyDelete(alphaKey, CommandFlags.FireAndForget);
+            //redis.KeyDelete(intersectKey, CommandFlags.FireAndForget);
+            //redis.KeyDelete(destinationKey, CommandFlags.FireAndForget);
 
-            //According to http://www.arkhitech.com/12-greatest-programmers-of-all-time/
             var topProgrammers = new[] {
                 "Dennis Ritchie",
                 "Linus Torvalds",
